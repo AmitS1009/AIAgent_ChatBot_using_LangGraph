@@ -4,7 +4,10 @@
 
 This project showcases the development of a conversational AI application, building up from a basic chatbot to a feature-rich platform. It leverages the power of **LangGraph** for creating robust, stateful LLM agents and **Streamlit** for a reactive, user-friendly web interface.
 
-The repository illustrates a clear progression through different versions, each adding a new layer of functionality.
+### ScreenShot
+---
+<img width="1838" height="837" alt="Screenshot 2025-09-04 000003" src="https://github.com/user-attachments/assets/e5dfcd60-f89a-4681-86f0-7a7804ab530b" />
+
 
 ## ✨ Key Features
 
@@ -56,7 +59,7 @@ Follow these steps to get the project running on your local machine.
 ### 1. Clone the Repository
 
 ```bash
-git clone <your-repository-url>
+git clone https://github.com/AmitS1009/AIAgent_ChatBot_using_LangGraph.git
 cd <your-repository-directory>
 ```
 
