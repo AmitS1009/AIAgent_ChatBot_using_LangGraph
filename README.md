@@ -1,8 +1,5 @@
 # AIAgent_ChatBot_using_LangGraph
 
------
-
-````markdown
 # 🚀 Advanced Chatbot with LangGraph, Streamlit, and Tools
 
 This project showcases the development of a conversational AI application, building up from a basic chatbot to a feature-rich platform. It leverages the power of **LangGraph** for creating robust, stateful LLM agents and **Streamlit** for a reactive, user-friendly web interface.
@@ -61,71 +58,57 @@ Follow these steps to get the project running on your local machine.
 ```bash
 git clone <your-repository-url>
 cd <your-repository-directory>
-````
+```
 
-### 2\. Create a Virtual Environment
 
-It's highly recommended to use a virtual environment to manage dependencies.
+Create a Virtual Environment
 
-```bash
+```
 python -m venv venv
 source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
 ```
+3. Install Dependencies
 
-### 3\. Install Dependencies
-
-Install all the required Python packages from the `requirements.txt` file.
-
-```bash
+```
 pip install -r requirements.txt
 ```
 
-### 4\. Set Up Environment Variables
+4. Set Up Environment Variables
+The application requires an OpenAI API key. Create a file named .env in the root directory and add your key:
 
-The application requires an OpenAI API key. Create a file named `.env` in the root directory and add your key:
-
-```
 OPENAI_API_KEY="sk-YourSecretOpenAIKeyGoesHere"
-```
+Note: The get_stock_price tool in langgraph_tool_backend.py has a hardcoded Alpha Vantage API key. For production use, you should move this to the .env file as well.
 
-**Note**: The `get_stock_price` tool in `langgraph_tool_backend.py` has a hardcoded Alpha Vantage API key. For production use, you should move this to the `.env` file as well.
-
------
-
-## ▶️ How to Run the Application
-
+▶️ How to Run the Application
 You can run any version of the application. To run the most complete version with tool integration, use the following command:
 
-```bash
+```
 streamlit run streamlit_frontend_tool.py
 ```
-
 Your web browser will open a new tab with the chatbot interface.
 
 To run simpler versions, simply replace the filename:
 
-  * `streamlit run streamlit_frontend.py` (Basic, in-memory)
-  * `streamlit run streamlit_frontend_database.py` (Database persistence)
+streamlit run streamlit_frontend.py (Basic, in-memory)
 
------
+streamlit run streamlit_frontend_database.py (Database persistence)
 
-## 📂 Code Overview
+📂 Code Overview
+---
+langgraph_*_backend.py: These files define the LangGraph agent's logic, state, and tools.
 
-  * **`langgraph_*_backend.py`**: These files define the LangGraph agent's logic, state, and tools.
-  * **`streamlit_*_frontend.py`**: These files contain all the Streamlit code for building the user interface, handling user input, and managing session state.
-  * **`requirements.txt`**: Lists all project dependencies.
-  * **`chatbot.db`**: The SQLite database file that will be automatically created to store conversation history when running the database or tool-enabled versions.
+streamlit_*_frontend.py: These files contain all the Streamlit code for building the user interface, handling user input, and managing session state.
 
------
+requirements.txt: Lists all project dependencies.
 
-## 💡 Future Improvements
+chatbot.db: The SQLite database file that will be automatically created to store conversation history when running the database or tool-enabled versions.
 
-  * **Error Handling**: Implement more robust error handling on both the frontend and backend.
-  * **Deploy to Cloud**: Containerize the application using Docker and deploy it to a cloud service like Streamlit Community Cloud or Hugging Face Spaces.
-  * **Add More Tools**: Expand the agent's capabilities by integrating more APIs and custom functions.
-  * **Enhanced UI**: Add features like copying code blocks, displaying structured tool outputs, and user feedback mechanisms.
+💡 Future Improvements
+---
+Error Handling: Implement more robust error handling on both the frontend and backend.
 
-<!-- end list -->
+Deploy to Cloud: Containerize the application using Docker and deploy it to a cloud service like Streamlit Community Cloud or Hugging Face Spaces.
 
-```
-```
+Add More Tools: Expand the agent's capabilities by integrating more APIs and custom functions.
+
+Enhanced UI: Add features like copying code blocks, displaying structured tool outputs, and user feedback mechanisms.
